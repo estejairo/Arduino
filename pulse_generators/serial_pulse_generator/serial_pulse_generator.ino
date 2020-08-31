@@ -1,4 +1,4 @@
-// Serial pulse generator to test ASD board, sending serial
+// Serial negative pulse generator to test ASD board, sending serial
 // commands.
 //
 // Author: Jairo Gonzalez
@@ -21,6 +21,7 @@ void setup() {
 
     //I/O
     pinMode(o_pulse_pin, OUTPUT);
+    digitalWrite(o_pulse_pin, HIGH);
 }
 
 void loop() {
@@ -38,7 +39,7 @@ void loop() {
             Serial.print("\tPulse number ");
             Serial.println(i);
             
-            digitalWrite(o_pulse_pin, HIGH);
+            digitalWrite(o_pulse_pin, LOW);
             delay(pulse_duration_ms);
             digitalWrite(o_pulse_pin, HIGH);
             delay(delay_time_ms);
