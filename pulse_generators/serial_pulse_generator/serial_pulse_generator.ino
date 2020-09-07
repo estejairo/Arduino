@@ -21,7 +21,7 @@ void setup() {
 
     //I/O
     pinMode(o_pulse_pin, OUTPUT);
-    digitalWrite(o_pulse_pin, HIGH);
+    digitalWrite(o_pulse_pin, LOW);
 }
 
 void loop() {
@@ -39,9 +39,9 @@ void loop() {
             Serial.print("\tPulse number ");
             Serial.println(i);
             
-            digitalWrite(o_pulse_pin, LOW);
-            delay(pulse_duration_ms);
             digitalWrite(o_pulse_pin, HIGH);
+            delay(pulse_duration_ms);
+            digitalWrite(o_pulse_pin, LOW);
             delay(delay_time_ms);
         }
         i = 1;
